@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Development Archives - JIRAYU.IN.TH</title>
+	<atom:link href="/category/wordpress/development/feed/" rel="self" type="application/rss+xml" />
+	<link></link>
+	<description>โปรแกรมเมอร์, ช่างภาพ, และคนเลี้ยงแมว</description>
+	<lastBuildDate>Fri, 26 Jul 2024 09:40:21 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.6.1</generator>
+<site xmlns="com-wordpress:feed-additions:1">43932498</site>	<item>
+		<title>แปลงภาพเป็น WebP อัตโนมัติผ่าน Cloudflare Workers และ Cloudflare Images</title>
+		<link>/2024/07/free-cloudflare-auto-convert-webp/</link>
+					<comments>/2024/07/free-cloudflare-auto-convert-webp/#respond</comments>
+		
+		<dc:creator><![CDATA[jirayu]]></dc:creator>
+		<pubDate>Fri, 26 Jul 2024 09:34:25 +0000</pubDate>
+				<category><![CDATA[Development]]></category>
+		<guid isPermaLink="false">/?p=4105</guid>
+
+					<description><![CDATA[<p>ผ่านไปหลายปี WebP ยังเป็นเรื่องปวดหัวอยู่เรื่อยๆ กูเกิลก็พยายามเหลือเกินที่จะหักคะแนนถ้าไม่ใช้ WebP แต่ใช้ JPEG หรือ PNG มันสะดวกกับชีวิตมากกว่า พอจะหาปลั๊กอินแปลง WebP ส่วนมากก็ไม่ฟรี หรือต้องคอนฟิกอะไรเพิ่มอีกเยอะแยะ ปวดหัว คือเมื่อไม่นานมานี้ Cloudflare สุดที่รักของเราได้เปิดให้ใช้บริการแปลงภาพเป็น WebP ได้ฟรีๆ ผ่านบริการ Cloudflare Images (แต่เดิมแถมมากับแพ็คเกจโปร แต่ตอนนี้ออกมาขายเป็นแพ็คเกจแรก และมีรุ่นฟรีให้ใช้งาน) ข้อจำกัดของ Cloudflare Images รุ่นฟรีมีดังนี้ เว็บใหญ่ๆ อาจจะต้องคำนวนค่าใช้จ่ายล่วงหน้ากันหน่อย แต่เว็บเล็กๆ หรือบล็อกส่วนตัวนี่ไม่น่าต้องได้เสียเงิน มาเรื่องของเรากันต่อ คือ Cloudflare Images มันสามารถสั่งแปลงได้ผ่านทาง URL โดยตรง ด้วยฟอร์แมตแบบนี้ และอีกทางหนึ่งคือใช้ Workers แปลงให้ Workers คือโปรแกรม JavaScript เล็กๆ ที่รันอยู่บน Cloudflare เอาไว้ทำงานฝั่ง Server เช่นแก้ header, &#8230;</p>
+<p>The post <a href="/2024/07/free-cloudflare-auto-convert-webp/">แปลงภาพเป็น WebP อัตโนมัติผ่าน Cloudflare Workers และ Cloudflare Images</a> appeared first on <a href="">JIRAYU.IN.TH</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p>ผ่านไปหลายปี WebP ยังเป็นเรื่องปวดหัวอยู่เรื่อยๆ กูเกิลก็พยายามเหลือเกินที่จะหักคะแนนถ้าไม่ใช้ WebP แต่ใช้ JPEG หรือ PNG มันสะดวกกับชีวิตมากกว่า  พอจะหาปลั๊กอินแปลง WebP ส่วนมากก็ไม่ฟรี  หรือต้องคอนฟิกอะไรเพิ่มอีกเยอะแยะ  ปวดหัว</p>
+
+
+
+<p>คือเมื่อไม่นานมานี้ Cloudflare สุดที่รักของเราได้เปิดให้ใช้บริการแปลงภาพเป็น WebP ได้ฟรีๆ ผ่านบริการ Cloudflare Images (แต่เดิมแถมมากับแพ็คเกจโปร  แต่ตอนนี้ออกมาขายเป็นแพ็คเกจแรก   และมีรุ่นฟรีให้ใช้งาน) ข้อจำกัดของ Cloudflare Images รุ่นฟรีมีดังนี้</p>
+
+
+
+<ul class="wp-block-list">
+<li>คิดค่าแปลงเริ่มต้น $0.5 ต่อ 1,000 ครั้งต่อเดือน (ถ้าใช้ไม่ถึง ไม่ต้องจ่าย) เรียกดูกี่ครั้งก็ได้  สิ้นเดือนนับใหม่
+<ul class="wp-block-list">
+<li>1 รูป แปลง 5 ขนาด = คิด 5 ครั้ง</li>
+</ul>
+</li>
+
+
+
+<li>รูปที่แปลงแล้ว  สามารถโยนไปเก็บไว้ที่ไหนก็ได้  หรือเก็บไว้บน Cloudflare Images ก็ได้เช่นกัน  คิดราคา $5 ต่อ 100,000 รูป  แปลงได้สูงสุด 20 ขนาด
+<ul class="wp-block-list">
+<li>1 รูป แปลง 20 ขนาด = คิด 1 รูป</li>
+</ul>
+</li>
+
+
+
+<li>รูปที่เก็บไว้บน Cloudflare Images คิดค่าเปิดดู $1 ต่อ 100,000 request</li>
+</ul>
+
+
+
+<p>เว็บใหญ่ๆ อาจจะต้องคำนวนค่าใช้จ่ายล่วงหน้ากันหน่อย  แต่เว็บเล็กๆ หรือบล็อกส่วนตัวนี่ไม่น่าต้องได้เสียเงิน</p>
+
+
+
+<span id="more-4105"></span>
+
+
+
+<p>มาเรื่องของเรากันต่อ  คือ Cloudflare Images มันสามารถสั่งแปลงได้ผ่านทาง URL โดยตรง  ด้วยฟอร์แมตแบบนี้</p>
+
+
+
+<pre class="wp-block-code"><code>https:&#47;&#47;&lt;ZONE&gt;/cdn-cgi/image/&lt;OPTIONS&gt;/&lt;SOURCE-IMAGE&gt;</code></pre>
+
+
+
+<p>และอีกทางหนึ่งคือใช้ Workers แปลงให้</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p>Workers คือโปรแกรม JavaScript เล็กๆ ที่รันอยู่บน Cloudflare เอาไว้ทำงานฝั่ง Server เช่นแก้ header, ทำ reverse proxy, หรือแปลงไฟล์</p>
+</blockquote>
+
+
+
+<p>ข้อดีคือเราสามารถกำหนดรูปแบบ URL ยังไงก็ได้ตามใจชอบ  และด้วยฟีเจอร์ Worker Routes ของ Cloudflare เอง  ทำให้เราสามารถกำหนด Workers Routes ให้เสียบไปอยู่ที่ subdirectory ของเว็บเราได้ทันที (อย่างเช่นผมกำหนดให้ Workers ไปเสียบอยู่ที่ <code>/wp-contents/uploads</code> เอาไว้เลย) ทำให้เราไม่จำเป็นต้องแก้ไข URL ใดๆ บนเว็บเรา  แค่ดีพลอยและคอนฟิกเพิ่มนิดหน่อย  ใช้ได้เลย</p>
+
+
+
+<p>Worker ที่ว่า  คือตัวนี้</p>
+
+
+
+<pre class="wp-block-code"><code>https:&#47;&#47;github.com/IronGhost63/cf-worker-image-transformer</code></pre>
+
+
+
+<p>โคลนโปรเจ็กท์ลงมาเก็บไว้ก่อน  จากนั้นเข้าไปที่โฮสต์ของเรา (ผมใช้ Cloudways) แล้วจัดการเพิ่มโดเมนสำรอง (เป็นซับโดเมนเว็บหลักก็ได้) และคอนฟิก A Record ใน DNS ให้เรียบร้อย  เช่น</p>
+
+
+
+<pre class="wp-block-code"><code>โดเมนหลัก: jirayu.in.th
+โดเมนสำรอง: web.jirayu.in.th</code></pre>
+
+
+
+<p>ส่วนฝั่ง DNS ก็กำหนด A Record ให้ชี้ไปที่ไอพีแอดเดรสเดียวกับโดเมนหลัก  เอาเป็นว่าถ้าเข้าเว็บหลักด้วยโดเมนสำรองได้ก็ถือว่าเรียบร้อย</p>
+
+
+
+<p>เหตุที่เราต้องมีโดเมนสำรอง  เพราะว่าพอ worker ของเราเสียบไปที่ <code>/wp-content/uploads/*</code> แล้ว  ทุกรีเควสท์ที่ส่งมาที่นี่จะถูกจัดการโดย worker ซึ่ง worker ของเราก็จะมีการเรียกไปที่พาธนี้เพื่อดึงรูปภาพเช่นกัน  และจะเกิด infinite request loop ขึ้น  ทางแก้คือเราเพิ่ม entry point ใหม่เข้าไปให้ worker ไปเรียกใช้แทน  จะได้ไม่ติดลูป</p>
+
+
+
+<p>เอาล่ะ  เสร็จแล้วกลับมาที่ worker ที่เราโคลนเอาไว้  ให้ก็อปไฟล์ <code>wrangler.example.toml</code> ตั้งชื่อใหม่เป็น <code>wrangler.toml</code> แล้วแก้ค่า <code>IMG_HOST</code> ให้เป็น<strong>โดเมนสำรอง</strong>ที่เราสร้างเอาไว้  จากนั้นดีพลอยขึ้น Cloudflare Workers ได้เลย</p>
+
+
+
+<p>หลังดีพลอยเสร็จแล้วก็เข้าไปที่หน้าจัดการโดเมนของเราบน Cloudflare ไปที่เมนู Workers Routes จากนั้นสร้าง route ใหม่ขึ้นมา  กำหนดค่าดังนี้</p>
+
+
+
+<pre class="wp-block-code"><code>&#91;Route]
+https:&#47;&#47;&lt;โดเมนหลัก&gt;/wp-content/uploads/*
+
+&#91;Worker]
+&lt;เลือกตัวที่เราเพิ่งดีพลอยไป&gt;</code></pre>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-medium"><a href="/wp-content/uploads/2024/07/Screenshot-2567-07-26-at-16.26.44.png"><img fetchpriority="high" decoding="async" width="300" height="256" src="/wp-content/uploads/2024/07/Screenshot-2567-07-26-at-16.26.44-300x256.png" alt="" class="wp-image-4106" srcset="/wp-content/uploads/2024/07/Screenshot-2567-07-26-at-16.26.44-300x256.png 300w, /wp-content/uploads/2024/07/Screenshot-2567-07-26-at-16.26.44-1024x872.png 1024w, /wp-content/uploads/2024/07/Screenshot-2567-07-26-at-16.26.44-768x654.png 768w, /wp-content/uploads/2024/07/Screenshot-2567-07-26-at-16.26.44.png 1108w" sizes="(max-width: 300px) 100vw, 300px" /></a></figure></div>
+
+
+<p>บันทึกการตั้งค่าให้เรียบร้อย  ทีนี้ก็น่าจะพร้อมใช้งานแล้ว</p>
+
+
+
+<p>ถ้าเราลองไปเปิดแท็บ Network ใน DevTools ดู  เลือกไฟล์รูปของเราแล้วเจอว่า <code>Content-Type: image/avif</code> และ <code>X-Workers-Hello: WP63</code> ก็ถือว่าเรียบร้อยแล้ว</p>
+
+
+
+<p>สำหรับเว็บที่รูปภาพเยอะๆ แนะนำให้ fork โปรเจ็กท์ออกไป แล้วเขียนให้มันเก็บภาพเพิ่มเอาครับ</p>
+
+
+
+<p>อนึ่ง  โค้ดเป็นแค่ PoC แนะนำว่าใครอยากเอาไปใช้จริง  ควรแก้เพิ่มครับ</p>
+<p>The post <a href="/2024/07/free-cloudflare-auto-convert-webp/">แปลงภาพเป็น WebP อัตโนมัติผ่าน Cloudflare Workers และ Cloudflare Images</a> appeared first on <a href="">JIRAYU.IN.TH</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>/2024/07/free-cloudflare-auto-convert-webp/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">4105</post-id>	</item>
+	</channel>
+</rss>
